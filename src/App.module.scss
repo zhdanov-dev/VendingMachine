@@ -1,0 +1,93 @@
+@import './variables.scss';
+
+.container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.alert {
+	@include font-500;
+	margin-bottom: 20px;
+	width: 1243px;
+	text-align: center;
+	animation: shake 0.3s;
+	box-sizing: border-box;
+	color: #fb4e4e;
+	background-color: #ffefef;
+	border-radius: 10px;
+	padding: 10px;
+	animation: shake 0.3s;
+}
+
+@keyframes shake {
+	25% {
+		transform: translateX(4px);
+	}
+	50% {
+		transform: translateX(-4px);
+	}
+	75% {
+		transform: translateX(4px);
+	}
+}
+
+.vending {
+	display: flex;
+}
+
+.items {
+	width: 600px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.tech__section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 40px;
+	border: 2px solid gray;
+	border-radius: 10px;
+	margin-right: 35px;
+}
+
+.main__section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 40px;
+	height: 502px;
+	border: 2px solid gray;
+	border-radius: 10px;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+}
+
+.button__container {
+	display: flex;
+	align-items: center;
+	width: 240px;
+	margin-bottom: 20px;
+}
+
+.purchasedItem {
+	@include font-500;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 60px;
+	border: 2px solid gray;
+	background-color: rgb(235, 235, 235);
+	border-radius: 10px;
+	cursor: pointer;
+}

@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# Имитация вендингового аппарата на React.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Итак, чтобы запустить данный проект необходимо клонировать его в нужную вам папку используя 
+### `git clone`
 
-## Available Scripts
+Далее Вам необходимо установить зависимости, для этого используйте
+### `npm install`
 
-In the project directory, you can run:
-
+После этого остается только запустить проект.
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+В данном проекте реализована имитация вендингового аппарата. Апарат умеет принимать купюры, выдавать товар и сдачу.
+Также можно использовать технический функционал. Для этого необходимо нажать кнопку "Войти" и ввести пароль (1234).
+В полноценном проекте пароли отправляются на сервер, после чего хешируются. В итоге сравниваются эти самые хеши.
+Здесь функционал для демонстрации, поэтому этого нет.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+В техническом функционале предусмотрено получение наличных из аппарата, а также внесение наличных.
+По такому же принципу легко реализуется добавление нового товара и пополнение уже имеющегося.
 
-### `npm test`
+Для удобства был использован менеджер состояния MobX.
+Чтобы не терять данные при перезагрузке, можно ипользовать дополнительную библиотеку: MobX persist.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Некоторые повторяющиеся элементы, связанные с купюрами можно реализовать циклично, но так как их количество неизменно, думаю можно оставить и так.
 
+Сборка проекта осуществляется с помощью команды 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+После этого полученная папка может быть использована на сервере.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Файл с переменными окружения не должен быть загружен, поэтому передается отдельно. Так как нет работы с внешними API то и надобности в нем нет.

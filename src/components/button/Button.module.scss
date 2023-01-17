@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.container {
+	@include font-500;
+	width: 200px;
+	height: 50px;
+	background-color: rgb(235, 235, 235);
+	border: 2px solid gray;
+	border-radius: 10px;
+	cursor: pointer;
+
+	&:hover {
+		opacity: .7;
+	}
+}
